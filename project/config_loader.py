@@ -23,6 +23,8 @@ try:
     DEBUG = True
     print("Запущен DEBUG мод")
 
+    file.close()
+
 except:
 
     print("File with SECRET_KEY doesn't exist.\nTry to search on env variable...")
