@@ -2,3 +2,7 @@
 /venv/
 /.idea/
 /config.json
+__pycache__/
+custom_auth/__pycache__/
+project/__pycache__/
+
