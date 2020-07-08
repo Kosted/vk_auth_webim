@@ -16,7 +16,7 @@ def index(request):
     user = UserSocialAuth.objects.get(user=request.user)
     r = requests.get('https://api.vk.com/method/friends.get',
                      params={'user_ids': 41, 'access_token': user.access_token, 'v': '5.120',
-                             'fields': ['nickname', 'sex', 'photo_50'], 'count': 5})
+                             'fields': ['nickname', 'photo_50'], 'count': 5})
     friends = json.loads(r.text)
     return render(request, 'index.html', context={"user": " ".join([request.user.first_name, request.user.last_name]),
                                                   'friends': friends['response']['items']})
@@ -26,3 +26,4 @@ def index(request):
 def logout(request):
     auth_logout(request)
     return redirect('login')
+

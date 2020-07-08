@@ -80,18 +80,17 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd1h2bs38j6c4bh',
-        'USER': 'wzcntoesfejgkr',
-        'PASSWORD': '2f317fe43c75044333351ddcd6da62be184d202f0c36070d24642632900ac6c2',
-        'HOST': 'ec2-54-228-250-82.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
+        'NAME': config_loader.NAME,
+        'USER': config_loader.USER,
+        'PASSWORD': config_loader.PASSWORD,
+        'HOST': config_loader.HOST,
+        'PORT': config_loader.PORT,
     }
 }
 
 SOCIAL_AUTH_POSTGRES_JSONFIELD = True
 SOCIAL_AUTH_VK_OAUTH2_KEY = config_loader.SOCIAL_AUTH_VK_OAUTH2_KEY
 SOCIAL_AUTH_VK_OAUTH2_SECRET = config_loader.SOCIAL_AUTH_VK_OAUTH2_SECRET
-SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
 
 LOGIN_REDIRECT_URL = '/'
 # Password validation

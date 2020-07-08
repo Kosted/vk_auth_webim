@@ -10,8 +10,9 @@
 <div>Вы авторизованы как {{ user }}</div>
 {% for friend in friends %}
     <div><img src="{{ friend.photo_50 }}">
-    <span>{{ friend.first_name }}</span>
-    <span>{{ friend.last_name }}</span></div>
+        <span>{{ friend.first_name }}</span>
+        <span>{{ friend.last_name }}</span>
+        <span>id:{{ friend.id }}</span></div>
 {% endfor %}
 </body>
 </html>
