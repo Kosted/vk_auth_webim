@@ -16,7 +16,6 @@ from project import config_loader
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -26,8 +25,7 @@ SECRET_KEY = config_loader.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config_loader.DEBUG
 
-ALLOWED_HOSTS = ['.herokuapp.com','127.0.0.1',]
-
+ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', ]
 
 # Application definition
 
@@ -76,14 +74,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd1h2bs38j6c4bh',
+        'USER': 'wzcntoesfejgkr',
+        'PASSWORD': '2f317fe43c75044333351ddcd6da62be184d202f0c36070d24642632900ac6c2',
+        'HOST': 'ec2-54-228-250-82.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -116,7 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -129,7 +129,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
