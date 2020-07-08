@@ -2,7 +2,7 @@ import json, os
 
 SECRET_KEY = None
 DATABASE_URL = None
-DEBUG = False
+DEBUG = None
 
 try:
     file = open("config.json", 'r')
@@ -20,8 +20,10 @@ try:
     SOCIAL_AUTH_VK_OAUTH2_SECRET = config['SOCIAL_AUTH_VK_OAUTH2_SECRET']
     print("SOCIAL_AUTH_VK_OAUTH2_SECRET найден в config файле")
 
-    DEBUG = True
-    print("Запущен DEBUG мод")
+    DEBUG = config['SOCIAL_AUTH_VK_OAUTH2_SECRET']
+    if DEBUG is None:
+        DEBUG = False
+    # print("Запущен DEBUG мод")
 
     file.close()
 
