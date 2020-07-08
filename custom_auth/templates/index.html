@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+</head>
+<body>
+
+<a href="logout/">Разлогиниться</a>
+<div>Вы авторизованы как {{ user }}</div>
+{% for friend in friends %}
+    <div><img src="{{ friend.photo_50 }}">
+    <span>{{ friend.first_name }}</span>
+    <span>{{ friend.last_name }}</span></div>
+{% endfor %}
+</body>
+</html>
