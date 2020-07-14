@@ -18,6 +18,10 @@ def index(request):
                      params={'user_ids': 41, 'access_token': user.access_token, 'v': '5.120',
                              'fields': ['nickname', 'photo_50'], 'count': 5})
     friends = json.loads(r.text)
+    if 'error' in friends:
+        auth_logout(request)
+        return redirect('login')
+
     return render(request, 'index.html', context={"user": " ".join([request.user.first_name, request.user.last_name]),
                                                   'friends': friends['response']['items']})
 
