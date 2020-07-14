@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
     <meta charset="UTF-8">
     <title>login</title>
 </head>
-<body>
-<a href="/login/vk-oauth2">Войти через вконтакли</a>
+<body class="" style='background-image: url({% static "custom_auth/click_me.png" %});'>
+<div class="container-fluid ">
+    <div class="row" style="margin-top: 200px">
+        <div class="col-auto mx-auto alert-primary ">
+
+            <div class="col-auto text-center mt-5">Войти через VK</div>
+            <a  href="/login/vk-oauth2">
+                <img class="mx-5 mb-5" src="{% static "custom_auth/vk.png" %}">
+            </a>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>

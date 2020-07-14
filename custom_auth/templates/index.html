@@ -3,16 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>main</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+<div class="container-fluid ">
+    <div class="row alert-primary p-2 h-100 border border-primary">
+        <div class="col text-left my-auto">
+            Вы авторизованы как {{ user }}
+        </div>
+        <div class="col ml-auto text-right">
 
-<a href="logout/">Разлогиниться</a>
-<div>Вы авторизованы как {{ user }}</div>
-{% for friend in friends %}
-    <div><img src="{{ friend.photo_50 }}">
-        <span>{{ friend.first_name }}</span>
-        <span>{{ friend.last_name }}</span>
-        <span>id:{{ friend.id }}</span></div>
-{% endfor %}
+            <a class="btn btn-primary" href="logout/" role="button">Разлогиниться</a>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row  m-2 justify-content-center">
+        <div class="col-auto ">
+
+            {% for friend in friends %}
+                <div class="col-12 alert-secondary shrink">
+
+                    <img class="m-2 border border-secondary" src="{{ friend.photo_50 }}">
+                    <span>{{ friend.first_name }} {{ friend.last_name }}. id: {{ friend.id }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+
 </body>
 </html>
